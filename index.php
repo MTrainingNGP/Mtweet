@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 require_once('config.php');
 $sql=mysql_query("SELECT message,user_id from messages");
 =======
