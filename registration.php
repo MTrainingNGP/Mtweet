@@ -28,17 +28,18 @@
   		alert("password and confirmpassword don't match");
   	}
 
+
   	}</script>
 </head>
 <body>
 
 <section style="background-color: #F0FFFF; ">
-<div class="row"><div class="col-md-12">hello</div>  </div>
+
   <div class="container" style="width: 400px; border: 1px solid blue; background-color: #E0B880">
 
-  <div class='row'>
-  <div class='col-md-12 col-md-left-10'>
+  
   <p class='text-center' style="font-size: 30px">REGISTRATION FORM</p>
+  <form method="post" action="">
       <div class="form-group">
       <label for="name">NAME</label>
       <input type="text" class="form-control" id="name" placeholder="name" name='name' required>
@@ -60,12 +61,11 @@
      <label for="confirmpassword">Confirm Password</label>
     <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" name="confirmpassword" required>
   </div>
-  <button type="submit" class="btn btn-default" onclick="match()">Submit</button>
+  <button type="submit" class="btn btn-default" name='submit' value='submit' >Submit</button>
   <a class="btn btn-default" href="index.php">Back</a>
 
     </form>
-    </div>
-  </div>
+    
   </div>
 </section>
 </body>

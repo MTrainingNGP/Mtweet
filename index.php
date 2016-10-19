@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 require_once('config.php');
 $sql=mysql_query("SELECT message,user_id from messages");
+=======
+
+$sql=mysql_query("select * from messages");
+>>>>>>> 528ad58d454b29b867b702c706fae5fe49c9f169
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +32,11 @@ $sql=mysql_query("SELECT message,user_id from messages");
   </style>
 </head>
 <body>
+<<<<<<< HEAD
 <nav class="navbar navbar-inverse">
+=======
+  <nav class="navbar navbar-inverse">
+>>>>>>> 528ad58d454b29b867b702c706fae5fe49c9f169
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
