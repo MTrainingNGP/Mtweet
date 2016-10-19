@@ -10,8 +10,8 @@ if (isset($_POST['submit'])) {
   $row = mysql_fetch_assoc(mysql_query($query));
 
 	if (!empty($row['id'])){
-		$_SESSION['id']=$res['id'];
-		header('location:http://localhost/proj/index.php');
+		$_SESSION['id']=$row['id'];
+		header('location:http://localhost/proj/profile.php');
   }
   else{
     echo "<script>alert('please check login data')</script>";
