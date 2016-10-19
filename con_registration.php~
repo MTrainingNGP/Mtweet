@@ -6,9 +6,8 @@
 		echo 'hello';
 		$error = array();
 		$error = validate_reg();
-		if(empty($error))
+		if(!isset($error))
 		{
-			echo "hello1";
 			$insert = "insert into users set
 					name = '".$_POST['name']."',
 					email = '".$_POST['email']."',

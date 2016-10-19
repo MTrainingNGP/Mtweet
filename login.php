@@ -1,18 +1,22 @@
 <?php
-if (isset($_POST['submit'])) {
-		$passdecry=md5($_POST['password']);
-		echo $query="select id from users where (email=".$_POST['email']." && password=".$passdecry.")";
-		$result=mysql_query($query);
+require_once('config.php');
 
-		if (!$result){
-			echo "<script>alert('please check login data')</script>";
-		}
-		else{
-			$res=mysql_fetch_assoc($result);
-			$_SESSION['id']=$res['id'];
-			header("index.php");
-		}
+if (isset($_POST['submit'])) {
+
+  extract($_POST);
+  //print_r($_POST);
+  $pwd = md5($password);
+  $query="SELECT id from users where password='$pwd' and email='$email' ";
+  $row = mysql_fetch_assoc(mysql_query($query));
+
+	if (!empty($row['id'])){
+		$_SESSION['id']=$res['id'];
+		header("index.php");
+  }
+  else{
+    echo "<script>alert('please check login data')</script>";
 	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
