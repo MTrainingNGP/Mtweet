@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 
 	if (!empty($row['id'])){
 		$_SESSION['id']=$res['id'];
-		header("index.php");
+		header('location:http://localhost/proj/index.php');
   }
   else{
     echo "<script>alert('please check login data')</script>";
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Maximess Project</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
