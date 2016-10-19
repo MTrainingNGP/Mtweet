@@ -25,4 +25,8 @@
 			
 		}
 	}
+	else
+	{
+		echo "<script> alert('Please submit form')</script>";
+	}
 ?>
