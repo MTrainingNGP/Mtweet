@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 
 	if (!empty($row['id'])){
 		$_SESSION['id']=$res['id'];
-		header('location:http://localhost/proj/index.php');
+		header('location:http://localhost/proj/profile.php');
   }
   else{
     echo "<script>alert('please check login data')</script>";
