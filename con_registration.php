@@ -1,4 +1,5 @@
 <?php
+	require_once("config.php");
 	require_once("validate.php");
 	if(isset($_POST['submit']))
 	{
