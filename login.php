@@ -1,6 +1,5 @@
 <?php
-print_r($_POST);
-	if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 		$passdecry=md5($_POST['password']);
 		echo $query="select id from users where (email=".$_POST['email']." && password=".$passdecry.")";
 		$result=mysql_query($query);
@@ -11,6 +10,7 @@ print_r($_POST);
 		else{
 			$res=mysql_fetch_assoc($result);
 			$_SESSION['id']=$res['id'];
+			header("index.php");
 		}
 	}
 ?>
@@ -36,6 +36,14 @@ print_r($_POST);
       padding: 25px;
     }
   </style>
+  <script type="text/javascript"> function prompt(){
+  	var pass= document.getElementById('password').value;
+  	var email= document.getElementById('email').value;
+  	if (email="" || pass=="") {
+  		alert("data missing from email or password field");
+  	}
+
+  	}</script>
 </head>
 <body>
 
@@ -52,8 +60,8 @@ print_r($_POST);
      <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name='password'>
   </div>
-  <input type="submit" class="btn btn-default" name="submit" value='submit'>
-  <button type="submit" class="btn btn-default pull-right">Back</button>
+  <input type="submit" class="btn btn-default" name="submit" onclick="prompt()" value='submit'>
+  <a href="index.php" class="btn btn-default pull-right">back</a>
     </form>
   </div>
 </section>

@@ -1,4 +1,4 @@
-<?php //require_once("con_registration.php"); ?>
+<?php require_once("con_registration.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +33,11 @@
 <body>
 
 <section style="background-color: #F0FFFF; ">
-
+<div class="row"><div class="col-md-12">hello</div>  </div>
   <div class="container" style="width: 400px; border: 1px solid blue; background-color: #E0B880">
+
+  <div class='row'>
+  <div class='col-md-12 col-md-left-10'>
   <p class='text-center' style="font-size: 30px">REGISTRATION FORM</p>
       <div class="form-group">
       <label for="name">NAME</label>
@@ -59,7 +62,10 @@
   </div>
   <button type="submit" class="btn btn-default" onclick="match()">Submit</button>
   <button type="submit" class="btn btn-default pull-right">Back</button>
+
     </form>
+    </div>
+  </div>
   </div>
 </section>
 </body>
