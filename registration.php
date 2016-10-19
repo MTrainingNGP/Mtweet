@@ -1,4 +1,4 @@
-<?php require_once("con_registration.php"); ?>
+<?php //require_once("con_registration.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +32,7 @@
 </head>
 <body>
 
-<section style="background-color: #F0FFFF">
+<section style="background-color: #F0FFFF; ">
 
   <div class="container" style="width: 400px; border: 1px solid blue; background-color: #E0B880">
   <p class='text-center' style="font-size: 30px">REGISTRATION FORM</p>
