@@ -61,7 +61,7 @@
     <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" name="confirmpassword" required>
   </div>
   <button type="submit" class="btn btn-default" onclick="match()">Submit</button>
-  <button type="submit" class="btn btn-default pull-right">Back</button>
+  <a class="btn btn-default" href="index.php">Back</a>
 
     </form>
     </div>
