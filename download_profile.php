@@ -1,0 +1,1 @@
+<a href= '".$_POST['email']."'.txt ></a>

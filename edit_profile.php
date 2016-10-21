@@ -1,4 +1,4 @@
-<?php require_once("con_registration.php"); ?>
+<?php require_once("con_edit_profile.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,32 +38,27 @@
   <div class="container" style="width: 400px; border: 1px solid blue; background-color: #E0B880">
 
   
-  <p class='text-center' style="font-size: 30px">REGISTRATION FORM</p>
+  <p class='text-center' style="font-size: 30px">EDIT PROFILE</p>
   <form method="post" action="" enctype="multipart/form-data">
       <div class="form-group">
       <label for="name">NAME</label>
-      <input type="text" class="form-control" id="name" placeholder="name" name='name' required>
+      <input type="text" class="form-control" id="name" placeholder="name" name='name' required value="<?php echo isset($data['name'])?$data['name']:'';?>">
   </div>
   
   <div class="form-group">
      <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="Email" name='email' required>
+    <input type="email" class="form-control" id="email" placeholder="Email" name='email' required value="<?php echo isset($data['email'])?$data['email']:'';?>">
   </div>
   <div class="form-group">
-     <label for="exampleInputPassword1">Mobile</label>
-    <input type="text" class="form-control" id="mobile" placeholder="Mobile" name='mobile' required>
+     <label for="mobile">Mobile</label>
+    <input type="text" class="form-control" id="mobile" placeholder="Mobile" name='mobile' required value="<?php echo isset($data['mobile'])?$data['mobile']:'';?>">
   </div>
-  <div class="form-group">
-     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
-  </div>
-  <div class="form-group">
-     <label for="confirmpassword">Confirm Password</label>
-    <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" name="confirmpassword" required>
-  </div>
+  
   <div class="form-group">
               <label for="confirmpassword">Profile Pic</label>
-              <div class="avtar"><input class="form-control" type="file" name="avatar" /></div>
+              <div class="form-group">
+              <img width="100px" height="100px" src="images/<?php echo $data['avatar'];?>"></img>
+              <input class="form-control" type="file" name="avatar" /></div>
               <span >jpeg or png</span>
               <?php if(isset($errors['avatar'])){?>
                 <div class="error">
@@ -71,8 +66,8 @@
                 </div>
               <?php } ?>
     </div>
-  <button type="submit" class="btn btn-default" name='submit'  >Submit</button>
-  <a class="btn btn-default" href="index.php">Back</a>
+  <button type="submit" class="btn btn-default" name='update' value='update' > Update</button>
+  <a class="btn btn-default" href="profile.php">Back</a>
 
     </form>
     
