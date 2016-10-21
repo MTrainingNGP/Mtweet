@@ -1,4 +1,6 @@
-<?php require_once("con_registration.php"); ?>
+<?php
+ require_once("con_registration.php");
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,10 +41,10 @@
 
   
   <p class='text-center' style="font-size: 30px">REGISTRATION FORM</p>
-  <form method="post" action="">
+  <form method="post" action="" enctype="multipart/form-data">
       <div class="form-group">
       <label for="name">NAME</label>
-      <input type="text" class="form-control" id="name" placeholder="name" name='name' required>
+      <input type="text" class="form-control" id="name" placeholder="name" name='name' value=""required>
   </div>
   
   <div class="form-group">
@@ -61,6 +63,14 @@
      <label for="confirmpassword">Confirm Password</label>
     <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" name="confirmpassword" required>
   </div>
+  <div class="form-group">
+      
+      <label class="control-label">upload image</label>
+ 
+      <input type="file" name="image">
+ 
+  </div>
+
   <button type="submit" class="btn btn-default" name='submit' value='submit' >Submit</button>
   <a class="btn btn-default" href="index.php">Back</a>
 

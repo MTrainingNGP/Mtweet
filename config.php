@@ -8,6 +8,6 @@
    
     mysql_select_db($database) or die("failed to connect database");
 
-    session_start();
+    SESSION_START();
 
 ?>
