@@ -9,13 +9,13 @@ if (isset($_POST['submit'])) {
   $query="SELECT id from users where password='$pwd' and email='$email' ";
   $row = mysql_fetch_assoc(mysql_query($query));
 
-	if (!empty($row['id'])){
-		echo $_SESSION['id']=$row['id'];
-		header('location:profile.php');
+  if (!empty($row['id'])){
+    echo $_SESSION['id']=$row['id'];
+    header('location:http://localhost/updateProject/profile.php');
   }
   else{
     echo "<script>alert('please check login data')</script>";
-	}
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -41,13 +41,13 @@ if (isset($_POST['submit'])) {
     }
   </style>
   <script type="text/javascript"> function prompt(){
-  	var pass= document.getElementById('password').value;
-  	var email= document.getElementById('email').value;
-  	if (email="" || pass=="") {
-  		alert("data missing from email or password field");
-  	}
+    var pass= document.getElementById('password').value;
+    var email= document.getElementById('email').value;
+    if (email="" || pass=="") {
+      alert("data missing from email or password field");
+    }
 
-  	}</script>
+    }</script>
 </head>
 <body>
 

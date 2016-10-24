@@ -1,5 +1,9 @@
 <?php 
-	require_once('config.php');
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  ini_set('display_startuperrors', 1);
+
+  require_once('config.php');
 
 	if (!isset($_SESSION['id'])) {
 		# code...
@@ -54,6 +58,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="download.php"><span class="glyphicon glyphicon-download-alt"></span> Download Text File</a></l>
+        <li><a href="edit_profile.php"><span class="glyphicon glyphicon-user"></span> Edit Profile</a></li>
         <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
@@ -72,6 +78,7 @@
     	</div>
     </form>
   </div>
+
 </div>
   
 <div class="container-fluid bg-3 text-center">    
@@ -108,4 +115,3 @@
 
 </body>
 </html>
-

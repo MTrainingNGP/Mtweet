@@ -1,4 +1,26 @@
-<?php require_once("con_registration.php"); ?>
+<?php 
+    require_once("con_registration.php"); 
+    $id = $_SESSION['id'];
+    
+    $sqlselectuser = mysql_query("SELECT * FROM users WHERE id = '".$id."'"); 
+    $row = mysql_fetch_array($sqlselectuser);
+    
+
+    if($_POST['submit'])
+    {
+    $target_file = 'uploads/' . basename($_FILES["image"]["name"]);
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) 
+    {
+        echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+    }
+    else 
+    {
+        echo "Sorry, there was an error uploading your file.";
+    }
+        $update_image = mysql_query("UPDATE users SET image='".$target_file."'");
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,31 +64,24 @@
   <form method="post" action="" enctype="multipart/form-data">
       <div class="form-group">
       <label for="name">NAME</label>
-      <input type="text" class="form-control" id="name" placeholder="name" name='name' required>
+      <input type="text" class="form-control" id="name" placeholder="name" name='name' 
+             value="<?php echo $row['name'];?>">
   </div>
-  
   <div class="form-group">
      <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="Email" name='email' required>
+    <input type="email" class="form-control" id="email" placeholder="Email" name='email'
+           value="<?php echo $row['email'];?>">
   </div>
   <div class="form-group">
      <label for="exampleInputPassword1">Mobile</label>
-    <input type="text" class="form-control" id="mobile" placeholder="Mobile" name='mobile' required>
+    <input type="text" class="form-control" id="mobile" placeholder="Mobile" name='mobile'
+           value="<?php echo $row['mobile'];?>">
   </div>
   <div class="form-group">
-     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
-  </div>
-  <div class="form-group">
-     <label for="confirmpassword">Confirm Password</label>
-    <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" name="confirmpassword" required>
-  </div>
-  <div class="form-group">
-  	<input type = "file" name = "image" />
+    <img src="<?php echo $row['image'];?>" width="70px" height="70px">
+  	<input type = "file" name = "image"/>
   </div>
   <button type="submit" class="btn btn-default" name='submit' value='submit' >Submit</button>
-  <a class="btn btn-default" href="index.php">Back</a>
-
     </form>
     
   </div>
